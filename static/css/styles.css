@@ -46,11 +46,47 @@ h6 {
 
 body {
   background: #333;
-  color: #fff;
+  color: #ffffff;
+}
+
+.intro {
+  height: 100vh;
+}
+
+.intro h1 {
+  margin-top: 15vh;
+  font-size: 5em;
+  color: #ff6c00;
+}
+
+.intro h2 {
+  margin-top: 3vh;
+  font-size: 2em;
 }
 
 .input {
-  min-height: 1000px;
+  margin-top: 20vh;
+  min-height: 50px;
+}
+
+.input h4 {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+}
+
+.upload {
+  width: 600px;
+}
+
+.submit {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ff6c00;
+  color: #ffffff;
+}
+
+.submit:hover, .submit:active, .submit:focus {
+  background-color: #FF5300;
 }
 
 .spacer {
@@ -61,5 +97,29 @@ body {
 .video {
   width: 832px;
   height: auto;
+  margin-left: 8vw;
+}
+
+.pills {
+  margin-left: 8vw;
+}
+
+.nav-link {
+  color: #ff6c00;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.active {
+  color: #ffffff;
+  background-color: #ff6c00 !important;
+}
+
+.tab-pane img {
+  width: 832px;
+  height: 400px;
+  margin-left: -8vw;
 }
 /*# sourceMappingURL=styles.css.map */
