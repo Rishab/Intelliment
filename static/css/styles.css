@@ -48,4 +48,18 @@ body {
   background: #333;
   color: #fff;
 }
+
+.input {
+  min-height: 1000px;
+}
+
+.spacer {
+  height: 500px;
+  width: 100%;
+}
+
+.video {
+  width: 832px;
+  height: auto;
+}
 /*# sourceMappingURL=styles.css.map */
