@@ -1,0 +1,17 @@
+boto3==1.9.224
+botocore==1.12.224
+Click==7.0
+docutils==0.15.2
+Flask==1.1.1
+itsdangerous==1.1.0
+Jinja2==2.10.1
+jmespath==0.9.4
+MarkupSafe==1.1.1
+numpy==1.17.2
+opencv-python==4.1.1.26
+python-dateutil==2.8.0
+s3transfer==0.2.1
+six==1.12.0
+urllib3==1.25.3
+Werkzeug==0.15.6
+XlsxWriter==1.2.0
