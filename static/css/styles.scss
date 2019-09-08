@@ -1,0 +1,84 @@
+/*General*/
+$primary-bg: #333;
+$highlight: #ff6c00;
+$text: #fff;
+$ease: all .15s ease-in-out;
+$row-spacing: 5%;
+$mobile-spacing: 25px;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700|Ubuntu:400,500,700&display=swap');
+
+/* Mandatory styling for placing Font Awesome on pseudo selectors*/
+@mixin icon-pseudo {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+$heading-font: 'Ubuntu', sans-serif;
+$body-font: 'Roboto', sans-serif;
+$nav-font-size: 0.875em;
+$dep-font-size: 1.6em;
+$body-font-size: 1em;
+$h1-font-size: 2em;
+$h2-font-size: 1.5em;
+$h3-font-size: 1.35em;
+$h4-font-sie: 1em;
+$h5-font-size: .95em;
+$h6-font-size: .875em;
+$h-line-height: 1.3em;
+
+
+/*General Styles*/
+html,body{
+  font-size: 16px;
+  font-family: $body-font;
+  color: #000;
+  overflow-x: hidden;
+}
+
+p{
+  margin: 0 0 20px 0;
+  line-height: 1.5em;
+  
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $heading-font;
+  line-height: $h-line-height;
+  font-weight: 700;
+}
+h1{
+  font-size: $h1-font-size;
+}
+
+h2{
+  font-size: $h2-font-size;
+}
+
+h3{
+  font-size: $h3-font-size;
+}
+
+h4{
+ font-size: $h4-font-sie;
+}
+
+h5{
+  font-size: $h5-font-size;
+}
+
+h6{
+  font-size: $h6-font-size;
+}
+
+
+body {
+  background: $primary-bg;
+  color: $text;
+}
+
+
+

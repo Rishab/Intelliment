@@ -1,0 +1,51 @@
+/*General*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700|Ubuntu:400,500,700&display=swap");
+/* Mandatory styling for placing Font Awesome on pseudo selectors*/
+/*General Styles*/
+html, body {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0 0 20px 0;
+  line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.3em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.35em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.95em;
+}
+
+h6 {
+  font-size: 0.875em;
+}
+
+body {
+  background: #333;
+  color: #fff;
+}
+/*# sourceMappingURL=styles.css.map */
