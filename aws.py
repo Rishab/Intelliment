@@ -4,48 +4,50 @@ import json
 import xlsxwriter
 import os
 
-with open('credentials.csv', 'r') as input:
-    next(input)
-    reader = csv.reader(input)
-    for line in reader:
-        access_key_id = line[0]
-        secret_access_key = line[1]
 
-rekognition = boto3.client(
-    "rekognition", aws_access_key_id=access_key_id, aws_secret_access_key=secret_access_key, region_name='us-east-1')
+def build_dataset():
+    with open('credentials.csv', 'r') as input:
+        next(input)
+        reader = csv.reader(input)
+        for line in reader:
+            access_key_id = line[0]
+            secret_access_key = line[1]
 
-frames = os.listdir('video_frames')
+    rekognition = boto3.client(
+        "rekognition", aws_access_key_id=access_key_id, aws_secret_access_key=secret_access_key, region_name='us-east-1')
 
-workbook = xlsxwriter.Workbook('sentigrade.xlsx')
-worksheet = workbook.add_worksheet()
+    frames = os.listdir('video_frames')
 
-worksheet.write('A1', 'Second')
-worksheet.write('B1', 'Image')
-worksheet.write('C1', 'Emotion')
-worksheet.write('D1', 'Confidence')
+    workbook = xlsxwriter.Workbook('dataset.xlsx')
+    worksheet = workbook.add_worksheet()
 
-currRow = 2
+    worksheet.write('A1', 'Second')
+    worksheet.write('B1', 'Image')
+    worksheet.write('C1', 'Emotion')
+    worksheet.write('D1', 'Confidence')
 
-for frame in frames:
-    print(frame)
-    photo = 'video_frames/' + frame
-    with open(photo, 'rb') as source_image:
-        source_bytes = source_image.read()
-    response = rekognition.detect_faces(
-        Image={'Bytes': source_bytes}, Attributes=['ALL'])
+    currRow = 2
 
-    worksheet.write('A%d' % currRow, frame.replace('.jpg', ''))
+    for frame in frames:
+        print(frame)
+        photo = 'video_frames/' + frame
+        with open(photo, 'rb') as source_image:
+            source_bytes = source_image.read()
+        response = rekognition.detect_faces(
+            Image={'Bytes': source_bytes}, Attributes=['ALL'])
 
-    maxEmotion = response['FaceDetails'][0]['Emotions']
-    maxNum = 0.0
-    for emotion in response['FaceDetails'][0]['Emotions']:
-        if emotion['Confidence'] > maxNum:
-            maxNum = emotion['Confidence']
-            maxEmotion = emotion['Type']
+        worksheet.write('A%d' % currRow, frame.replace('.jpg', ''))
 
-    worksheet.write('B%d' % currRow, frame)
-    worksheet.write('C%d' % currRow, maxEmotion)
-    worksheet.write('D%d' % currRow, maxNum)
-    currRow += 1
+        maxEmotion = response['FaceDetails'][0]['Emotions']
+        maxNum = 0.0
+        for emotion in response['FaceDetails'][0]['Emotions']:
+            if emotion['Confidence'] > maxNum:
+                maxNum = emotion['Confidence']
+                maxEmotion = emotion['Type']
 
-workbook.close()
+        worksheet.write('B%d' % currRow, frame)
+        worksheet.write('C%d' % currRow, maxEmotion)
+        worksheet.write('D%d' % currRow, maxNum)
+        currRow += 1
+
+    workbook.close()

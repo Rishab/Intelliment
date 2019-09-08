@@ -1,9 +1,13 @@
 import cv2
 import math
+import os
+import shutil
 
 
 def frame_capture(path):
     imagesFolder = "video_frames"
+    shutil.rmtree(imagesFolder)
+    os.mkdir(imagesFolder)
     video = cv2.VideoCapture(path)
     second = 0
 
