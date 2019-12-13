@@ -1,4 +1,5 @@
 Inspiration
+____________
 Knowing that there are many classrooms across the world that have to settle for a sub-optimal ratio between educators and students, it is expected that there are many emotional and social needs of individual students that are often overlooked.
 
 For example, this is especially critical for non verbal children with autism, who may react positively to certain aspects of the lesson plan but extremely negatively despite not being able to communicate their internal emotions verbally.
